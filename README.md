@@ -6,8 +6,6 @@ Welcome to the Fitness App repository! This project is a comprehensive fitness t
 
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
