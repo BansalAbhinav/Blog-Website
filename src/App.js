@@ -1,30 +1,23 @@
-import React from "react"
-import { Footer } from "./components/footer/Footer"
-import { Header } from "./components/header/Header"
-import { Home } from "./pages/home/Home"
-import { Login } from "./pages/login/Login"
-import { Regsiter } from "./pages/login/Regsiter"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import { DetailsPages } from "./pages/details/DetailsPages"
-import { Account } from "./pages/account/Account"
-import { Create } from "./components/create/Create"
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { Box } from '@mui/material';
 
-const App = () => {
-  return (
-    <>
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/register' component={Regsiter} />
-          <Route exact path='/details/:id' component={DetailsPages} />
-          <Route exact path='/account' component={Account} />
-          <Route exact path='/create' component={Create} />
-        </Switch>
-        <Footer />
-      </Router>
-    </>
-  )
-}
-export default App
+import './App.css';
+import ExerciseDetail from './pages/ExerciseDetail';
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+const [exercises, setExercises] = useState([]);
+
+const App = () => (
+  <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/exercise/:id" element={<ExerciseDetail />} />
+    </Routes>
+    <Footer />
+  </Box>
+);
+
+export default App;
